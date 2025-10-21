@@ -1,0 +1,24 @@
+# Replit configuration file for the Pexels Image Explorer project.
+# This file tells the Replit IDE how to run the Flask web application.
+
+# The command to execute when the "Run" button is pressed.
+# - FLASK_APP=app.py: Sets the environment variable to tell Flask which file contains our application instance.
+# - flask run: The standard command to start the Flask development server.
+# - --host=0.0.0.0: Makes the server publicly accessible, which is necessary for it to work in the Replit environment.
+# - --port=8080: Explicitly sets the port, which is good practice in containerized environments like Replit.
+run = "FLASK_APP=app.py flask run --host=0.0.0.0 --port=8080"
+
+# Specifies the main file to open in the editor when the project loads.
+# 'app.py' is the backend entrypoint, making it a logical choice.
+entrypoint = "app.py"
+
+# Specifies the programming language and version.
+# This helps Replit provide the correct environment, linter, and debugger.
+language = "python3"
+
+# Enables or disables guessing which packages to install.
+# It's good practice to manage dependencies explicitly via `pyproject.toml` (with Poetry)
+# or `requirements.txt` (with pip), so we can leave this as is.
+[packager]
+[packager.features]
+guessImports = true
