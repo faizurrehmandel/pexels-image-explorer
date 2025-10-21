@@ -1,0 +1,10 @@
+# Pexels Image Explorer - Python Dependencies
+# ----------------------------------------------
+# This file lists the Python packages required to run the application.
+# Install them using the command: pip install -r requirements.txt
+
+# The core web framework for building the application server.
+Flask==3.0.3
+
+# A simple, yet elegant, HTTP library for making requests to the Pexels API.
+requests==2.31.0
