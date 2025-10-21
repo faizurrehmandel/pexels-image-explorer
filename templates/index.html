@@ -1,0 +1,79 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta tags for character set and responsive design -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Page Title -->
+    <title>Pexels Image Explorer</title>
+
+    <!-- Description for SEO -->
+    <meta name="description" content="A simple web application to search for images using the Pexels API.">
+
+    <!-- Link to the main stylesheet -->
+    <!-- The url_for function is a Flask template helper to generate URLs for static files -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <!-- Optional: Favicon -->
+    <!-- <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon"> -->
+</head>
+<body>
+
+    <!-- Header section containing the main title and a brief description -->
+    <header class="header">
+        <h1>Pexels Image Explorer</h1>
+        <p>Discover beautiful, free-to-use photos</p>
+    </header>
+
+    <!-- Main content area of the application -->
+    <main>
+        <!-- Search form section -->
+        <section class="search-section">
+            <form id="search-form" class="search-form" role="search">
+                <!-- 
+                    A visually hidden label for accessibility. 
+                    It ensures screen readers can identify the purpose of the input field.
+                    The .visually-hidden class should be defined in style.css.
+                -->
+                <label for="search-input" class="visually-hidden">Search for images</label>
+                <input type="text" id="search-input" name="query" placeholder="e.g., Nature, Technology, People..." required aria-label="Search for images">
+                <button type="submit" id="search-button">Search</button>
+            </form>
+        </section>
+
+        <!-- Gallery section where image results will be displayed -->
+        <section class="gallery-section">
+            <!-- 
+                This container will be populated with images by script.js 
+                after a successful API call.
+            -->
+            <div id="gallery-container" class="gallery">
+                <!-- 
+                    Initial status message. This will be replaced by search results, 
+                    a loading indicator, or an error message by the JavaScript.
+                -->
+                <p id="status-message">Enter a search term above to begin.</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer section with mandatory Pexels attribution -->
+    <footer class="footer">
+        <p>
+            Photos provided by 
+            <a href="https://www.pexels.com" target="_blank" rel="noopener noreferrer">Pexels</a>.
+        </p>
+    </footer>
+
+    <!-- 
+        Link to the main JavaScript file.
+        Placing scripts at the end of the body improves page load performance,
+        as the browser can render the HTML/CSS before parsing the JavaScript.
+    -->
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+</html>
+```
